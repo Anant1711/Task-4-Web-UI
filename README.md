@@ -106,3 +106,53 @@ It shows `Item deleted successfully` and we can also check in all items page tha
   }
 ```
 
+<h3>4. Get By ID</h3>
+
+In this page we can retrieve server detail by their ID number.If ID number is not exist in db it will show `404 NOT FOUND`.
+
+<img src="/Screenshots/gid.jpg" alt="All details"/>
+
+```js
+async function handleGetById() {
+    const response = await fetch(`http://localhost:8080/${id}`);
+
+    if (!response.ok) {
+      if (response.status === 404) {
+        alert("404 NOT FOUND");
+        window.location.reload(false);
+      } else {
+        alert('An error occurred');
+      }
+      return;
+    }
+
+    const data = await response.json();
+    setData(data);
+  }
+```
+
+
+<h3>4. Get By Name</h3>
+
+In this page we can retrieve **all** server detail by their Name.If Name is not exist in db it will show `404 NOT FOUND`.
+
+<img src="/Screenshots/gnm.jpg" alt="All details"/>
+
+```js
+async function handleGetByName() {
+    const response = await fetch(`http://localhost:8080/name/${name}`);
+
+    if (!response.ok) {
+      if (response.status === 404) {
+        alert("404 NOT FOUND");
+        window.location.reload(false);
+      } else {
+        alert('An error occurred');
+      }
+      return;
+    }
+
+    const data = await response.json();
+    setData(data);
+  }
+```
