@@ -29,7 +29,7 @@ The backend API for this app is built with Spring Boot and MongoDB. The source c
 
 ## Usage
 
-<h3>All details</h3>
+<h3>1. All details</h3>
 
 <img src="/Screenshots/alldetail.jpg" alt="All details"/>
 
@@ -47,7 +47,7 @@ The backend API for this app is built with Spring Boot and MongoDB. The source c
 
 This code is a React component that displays a table of server details. The `useEffect` hook is used to make a `GET` request to the backend server (running on http://localhost:8080/) to retrieve an array of server details, which is stored in the server state variable using the `setServer` function.
 
-<h3>Add Details to DB</h3>
+<h3>2. Add Details to DB</h3>
 
 I've created this Add details page where all 4 fields are required otherwise it throuh error and not take empty request from user. 
 
@@ -74,7 +74,7 @@ As you can see server detail save successfully in db with ID number `005`
 ```
 
 
-<h3>Delete by ID</h3>
+<h3>3. Delete by ID</h3>
 
 On this page, we can delete server details by their id number. If ID number exist in db it delete it and throw a alert box which stated that `Item deleted successfully` and if ID number is not exist it db it will give `404 NOT FOUND` status.
 
