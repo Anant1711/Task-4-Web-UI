@@ -73,6 +73,9 @@ As you can see server detail save successfully in db with ID number `005`
     window.location.reload(false);
 ```
 
+This code sends a `POST` request to the server with the data in the server variable. It specifies the request method as **"POST"** and the content type of the request body as **"application/json"** in the request headers. The `JSON.stringify()` method is used to convert the data in the server variable to a JSON string format.
+
+Once the server has successfully processed the request, an alert is displayed to indicate that a `new student has been added`. Finally, `window.location.reload(false)` is called to reload the current page and update the list of students with the new student added.
 
 <h3>3. Delete by ID</h3>
 
@@ -106,6 +109,12 @@ It shows `Item deleted successfully` and we can also check in all items page tha
   }
 ```
 
+This is async function, it first sends a DELETE request to the server at the specified endpoint `http://localhost:8080/${id}`, which is the ID of the item to be deleted.
+
+If the response is not ok (i.e., the request was not successful), it checks the status code of the response. If the status code is `404`, it means that the item with the specified ID was not found, so it shows an alert message.
+
+If the response is successful, it shows an alert message to indicate that the item was deleted successfully, and reloads the page to update the displayed data.
+
 <h3>4. Get By ID</h3>
 
 In this page we can retrieve server detail by their ID number.If ID number is not exist in db it will show `404 NOT FOUND`.
@@ -130,7 +139,9 @@ async function handleGetById() {
     setData(data);
   }
 ```
+This is an async function called `handleGetById()`, which sends a `GET` request to the server to retrieve data for a specific ID. 
 
+If the response is `OK`, the function parses the response body as JSON data using the `response.json()` method, and sets the resulting data to the data state variable using the `setData()` function.
 
 <h3>4. Get By Name</h3>
 
@@ -156,3 +167,5 @@ async function handleGetByName() {
     setData(data);
   }
 ```
+
+This is an async function that retrieves data from the server by making a `GET` request to the endpoint with the specified name parameter. If name does not exist it shows alert `404 not found`. If the name exists, the data is extracted from the response body using `response.json()` and stored in the data variable using the `setData` function.
