@@ -30,4 +30,79 @@ The backend API for this app is built with Spring Boot and MongoDB. The source c
 ## Usage
 
 <h3>All details</h3>
+
 <img src="/Screenshots/alldetail.jpg" alt="All details"/>
+
+```js
+//Function for getting all queries from DB
+    useEffect(() => {
+        fetch("http://localhost:8080/")
+            .then(res => res.json())
+            .then((result) => {
+                setServer(result);
+            }
+            )
+    }, [])
+```
+
+This code is a React component that displays a table of server details. The `useEffect` hook is used to make a `GET` request to the backend server (running on http://localhost:8080/) to retrieve an array of server details, which is stored in the server state variable using the `setServer` function.
+
+<h3>Add Details to DB</h3>
+
+I've created this Add details page where all 4 fields are required otherwise it throuh error and not take empty request from user. 
+
+<img src="/Screenshots/add1.jpg" alt="All details"/>
+
+After enter all fields and click on send button, it will trigger `handled` function and save it to the db and refresh the page automatically.
+
+<img src="/Screenshots/add2.jpg" alt="All details"/>
+
+As you can see server detail save successfully in db with ID number `005`
+
+<img src="/Screenshots/add3.jpg" alt="All details"/>
+
+```js
+//For POST request, for sending data to Mongodb Database
+    fetch("http://localhost:8080", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(server)
+    }).then(() => {
+      alert("New Student added")
+    })
+    window.location.reload(false);
+```
+
+
+<h3>Delete by ID</h3>
+
+On this page, we can delete server details by their id number. If ID number exist in db it delete it and throw a alert box which stated that `Item deleted successfully` and if ID number is not exist it db it will give `404 NOT FOUND` status.
+
+Let's try to delete server detail with ID number `005` that we added earlier.
+
+<img src="/Screenshots/delete1.jpg" alt="All details"/>
+
+It shows `Item deleted successfully` and we can also check in all items page that ID number `005` is deleted.
+
+<img src="/Screenshots/delete2.jpg" alt="All details"/>
+
+```js
+//Delete method for delete item from ID
+  async function handleDeleteById() {
+    const response = await fetch(`http://localhost:8080/${id}`, {
+      method: 'DELETE',
+    });
+
+    if (!response.ok) {
+      if (response.status === 404) {
+        alert("404 NOT FOUND");
+      } else {
+        alert('An error occurred');
+      }
+      return;
+    }
+    alert('Item deleted successfully');
+    window.location.reload(false);
+  }
+```
+
