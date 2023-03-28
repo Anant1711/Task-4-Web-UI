@@ -55,7 +55,7 @@ I've created this Add details page where all 4 fields are required otherwise it 
 
 After enter all fields and click on send button, it will trigger `handled` function and save it to the db and refresh the page automatically.
 
-<img src="/Screenshots/add2.jpg" alt="All details"/>
+<img src="/Screenshots/addS.jpg" alt="All details"/>
 
 As you can see server detail save successfully in db with ID number `005`
 
@@ -75,7 +75,7 @@ As you can see server detail save successfully in db with ID number `005`
 
 This code sends a `POST` request to the server with the data in the server variable. It specifies the request method as **"POST"** and the content type of the request body as **"application/json"** in the request headers. The `JSON.stringify()` method is used to convert the data in the server variable to a JSON string format.
 
-Once the server has successfully processed the request, an alert is displayed to indicate that a `new student has been added`. Finally, `window.location.reload(false)` is called to reload the current page and update the list of students with the new student added.
+Once the server has successfully processed the request, an alert is displayed to indicate that a `Added Successfully`. Finally, `window.location.reload(false)` is called to reload the current page and update the list of Server with the new Server added.
 
 <h3>3. Delete by ID</h3>
 
