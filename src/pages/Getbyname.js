@@ -11,10 +11,11 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
 export const Getbyname = () => {
+  // declare variables
   const [name, setName] = useState('');
   const [data, setData] = useState([]);
 
-
+  // function for getting all server detail by their name
   async function handleGetByName() {
     const response = await fetch(`http://localhost:8080/name/${name}`);
 
@@ -45,6 +46,7 @@ export const Getbyname = () => {
             alignItems="center"
             spacing={3}
           >
+            {/* Button for send request */}
             <Button variant="contained" color="success" onClick={handleGetByName} >Get</Button>
             <br /><br />
           </Stack>
