@@ -24,7 +24,9 @@ export const Deletebyid = () => {
       }
       return;
     }
+
     alert('Item deleted successfully');
+    // for reload screen
     window.location.reload(false);
   }
 
