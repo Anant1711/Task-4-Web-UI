@@ -14,7 +14,7 @@ export default function AddDetail_DB() {
   const [framework, setframe] = useState('')
   const [errors, setErrors] = useState({})
 
-  // Handler for sending button
+  // Handler function for sending button
   const handled = (e) => {
     e.preventDefault()
 
