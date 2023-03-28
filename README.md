@@ -68,7 +68,7 @@ As you can see server detail save successfully in db with ID number `005`
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(server)
     }).then(() => {
-      alert("New Student added")
+      alert("Added Successfully")
     })
     window.location.reload(false);
 ```
