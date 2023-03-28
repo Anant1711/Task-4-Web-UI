@@ -25,7 +25,7 @@ const Alldetails = () => {
 
             <Paper elevation={3}>
 
-                //Map all items from DB and print in a table form
+                {/* Map all items from DB and print in a table form */}
                 {server.length > 0 && (
                     <Table>
                         <TableHead>
