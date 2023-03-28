@@ -15,7 +15,7 @@ export const Getbyid = () => {
   const [id, setId] = useState('');
   const [data, setData] = useState(null);
   
-  
+  // function for fetch server detail by id 
   async function handleGetById() {
     const response = await fetch(`http://localhost:8080/${id}`);
 
@@ -46,6 +46,7 @@ export const Getbyid = () => {
         alignItems="center"
         spacing={3}
       >
+        {/* Button for sending request */}
         <Button variant="contained" color="success" onClick={handleGetById} >Get</Button>
         <br/>
       </Stack>
