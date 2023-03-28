@@ -42,7 +42,7 @@ export const Deletebyid = () => {
             spacing={3}
           >
 
-            //Button for send request
+            {/* Button for send request */}
             <Button variant="contained" color="error" onClick={handleDeleteById} >Delete</Button>
           </Stack>
         </Box>
