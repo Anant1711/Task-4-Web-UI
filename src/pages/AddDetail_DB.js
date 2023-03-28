@@ -14,14 +14,14 @@ export default function AddDetail_DB() {
   const [framework, setframe] = useState('')
   const [errors, setErrors] = useState({})
 
-  //Handler for sending button
+  // Handler for sending button
   const handled = (e) => {
     e.preventDefault()
 
     const errors = {}
     let hasError = false
 
-    //Functions for make fields required
+    // Functions for make fields required
     if (name.trim() === '') {
       errors.name = 'Name is required'
       hasError = true
@@ -57,7 +57,7 @@ export default function AddDetail_DB() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(server)
     }).then(() => {
-      console.log("New Student added")
+      alert("Added Successfully")
     })
     window.location.reload(false);
   }
@@ -72,7 +72,7 @@ export default function AddDetail_DB() {
       noValidate
       autoComplete="off"
     >
-      //TextField for entering values
+      {/* TextField for entering values */}
       <Stack
         direction="row"
         justifyContent="center"
@@ -127,7 +127,7 @@ export default function AddDetail_DB() {
         alignItems="center"
         spacing={3}
       >
-        //Button for send to DB
+        {/* Button for send to DB */}
         <Button variant="contained" color="success" onClick={handled} >Send</Button>
       </Stack>
     </Box>
