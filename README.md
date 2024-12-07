@@ -1,4 +1,4 @@
-# Task-4 Web UI
+# Web UI
 
 This is React app is for performing GET/POST/DELETE operations. The app communicates with a backend API built with Spring Boot and MongoDB.
 
